@@ -27,7 +27,13 @@ body, a:link, a:visited, a:active{
 }
 
 .marble{
-  border:50px solid blue;
+  border:25px solid blue;
+  border-radius:25px;
+  position:absolute;
+}
+
+.ewok{
+  border:50px solid green;
   border-radius:50px;
   position:absolute;
 }

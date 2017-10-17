@@ -22,6 +22,13 @@ $(document).ready(function() {
 
     // make a dancer with a random position
     
+    var ewok = new Ewok(
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
+      Math.random() * 1000
+    );
+    $('body').append(ewok.$node);
+    
     var marble = new Marble(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
