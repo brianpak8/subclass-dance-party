@@ -1,6 +1,6 @@
 var Marble = function (top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="marble"></span>');
+  this.$node = $('<div class="marble"></div>');
   this.setPosition(top, left);
 };
 Marble.prototype = Object.create(Dancer.prototype);

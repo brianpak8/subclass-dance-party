@@ -30,10 +30,57 @@ body, a:link, a:visited, a:active{
   border:25px solid blue;
   border-radius:25px;
   position:absolute;
+  animation-duration: 3s;
+  animation-name: bounce; 
+  animation-iteration-count: 150;
 }
 
 .ewok{
-  border:50px solid green;
+  border:50px solid red;
   border-radius:50px;
   position:absolute;
+  animation-duration: 5s;
+  animation-name: colorChange;
+
 }
+
+  @keyframes colorChange {
+    0% {border:50px solid white
+    border-radius:50px;
+    }
+
+    50% {border:50px solid blue;
+    border-radius:50px;
+    }
+    75% {border:50px solid yellow;
+    border-radius:50px;
+    }
+    100% {border:50px solid green;
+    border-radius:50px;
+    }
+  }
+
+@keyframes bounce {
+    0% {
+      transform:translateY(-100%);
+      opacity: 0;
+    }
+    5% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    15% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50%);
+    }
+    70% {
+      transform:translateY(0%);
+    }
+    100% {
+      transform:translateY(0);
+      opacity: 1;
+    }
+  }
+  
