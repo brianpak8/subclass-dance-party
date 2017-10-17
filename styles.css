@@ -36,12 +36,15 @@ body, a:link, a:visited, a:active{
 }
 
 .ewok{
-  border:50px solid red;
-  border-radius:50px;
+  border:50px solid green;
+  border-radius: 50px;
   position:absolute;
-  animation-duration: 5s;
-  animation-name: colorChange;
-
+  /*animation-duration: 5s;
+  animation-name: colorChange;*/
+}
+.ewok:hover {
+  border:50px solid brown;
+  border-radius: 0px;
 }
 
   @keyframes colorChange {

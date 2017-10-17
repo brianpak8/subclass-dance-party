@@ -72,9 +72,7 @@ $(document).ready(function() {
       window.dancers[i].setPosition($('body').height() * .5, ((i) * (($('body').width()) 
       / (window.dancers.length + 1))));
     }
-  
-    //$('body').append(.$node);
-
   });
+  
 });
 
