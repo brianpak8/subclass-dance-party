@@ -66,12 +66,82 @@ $(document).ready(function() {
   
   $('.makeDancersLineUp').on('click', function(event) {
     console.log('button clicked');
-    console.log(JSON.stringify(window.dancers));
+    console.log(window.dancers);
     for (var i = 0; i < window.dancers.length; i++) {
       //window.dancers[i].setPosition(50, 50);
       window.dancers[i].setPosition($('body').height() * .5, ((i) * (($('body').width()) 
       / (window.dancers.length + 1))));
     }
+  });
+  
+  $('body').on('click', '.marble', function(event) {
+
+    var top = Math.round($(this)[0].offsetTop);
+    var left = Math.round($(this)[0].offsetLeft);
+    
+    for (var i = 0; i < window.dancers.length; i++) {
+      let currentTop = Math.round(window.dancers[i].top);
+      let currentLeft = Math.round(window.dancers[i].left);
+      // if (Math.round(left) === currentLeft && Math.round(top) === currentTop) {
+      //   console.log(window.dancers);
+      //   window.dancers.splice(i, 1);
+      //   console.log(window.dancers);
+      // }  
+    }
+    
+    var farthest;
+    var farthestDistance = 0;
+    for (var i = 0; i < window.dancers.length; i++) {
+      let currentTop = window.dancers[i].top;
+      let currentLeft = window.dancers[i].left;
+      let currentDistance = Math.sqrt(Math.pow(left - currentLeft, 2) + Math.pow(top - currentTop, 2));
+      if (currentDistance > farthestDistance) {
+        farthestDistance = currentDistance;
+        farthest = window.dancers[i];
+      }
+    }
+    var newTop = (farthest.top + top) / 2;
+    var newLeft = (farthest.left + left) / 2;
+    var marble = new Marble(newTop, newLeft, Math.random() * 1000);
+    $('body').append(marble.$node);
+    window.dancers.push(marble);
+    
+    $(this)[0].offsetTop = 0;
+    $(this)[0].offsetLeft = 0;
+  });
+  
+  $('body').on('click', '.ewok', function(event) {
+    console.log($(this));
+    var top = Math.round($(this)[0].offsetTop);
+    var left = Math.round($(this)[0].offsetLeft);
+    
+    for (var i = 0; i < window.dancers.length; i++) {
+      let currentTop = Math.round(window.dancers[i].top);
+      let currentLeft = Math.round(window.dancers[i].left);
+      // if (Math.round(left) === currentLeft && Math.round(top) === currentTop) {
+      //   console.log(window.dancers);
+      //   window.dancers.splice(i, 1);
+      //   console.log(window.dancers);
+      // }  
+    }
+    
+    var farthest;
+    var farthestDistance = 0;
+    for (var i = 0; i < window.dancers.length; i++) {
+      let currentTop = window.dancers[i].top;
+      let currentLeft = window.dancers[i].left;
+      let currentDistance = Math.sqrt(Math.pow(left - currentLeft, 2) + Math.pow(top - currentTop, 2));
+      if (currentDistance > farthestDistance) {
+        farthestDistance = currentDistance;
+        farthest = window.dancers[i];
+      }
+    }
+    var newTop = (farthest.top + top) / 2;
+    var newLeft = (farthest.left + left) / 2;
+    
+    var ewok = new Ewok(newTop, newLeft, Math.random() * 1000);
+    $('body').append(ewok.$node);
+    window.dancers.push(ewok);
   });
   
 });

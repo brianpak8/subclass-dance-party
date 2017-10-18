@@ -46,6 +46,9 @@ body, a:link, a:visited, a:active{
   border:50px solid brown;
   border-radius: 0px;
 }
+.remove {
+  opacity: 0
+}
 
   @keyframes colorChange {
     0% {border:50px solid white
